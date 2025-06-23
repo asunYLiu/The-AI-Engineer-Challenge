@@ -1,4 +1,5 @@
 # Import required FastAPI components for building the API
+
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,6 +9,9 @@ from pydantic import BaseModel
 from openai import OpenAI
 import os
 from typing import Optional
+from dotenv import load_dotenv
+
+load_dotenv()  # This line loads the variables from .env
 
 # Initialize FastAPI application with a title
 app = FastAPI(title="OpenAI Chat API")
